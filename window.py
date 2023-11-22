@@ -21,8 +21,17 @@ class Main(QMainWindow, Ui_MainWindow):
         self.action2.triggered.connect(self.proc)
         self.action3.triggered.connect(self.ram)
         self.action4.triggered.connect(self.disks)
+        self.action5.triggered.connect(self.net)
 
         self.general()
+
+    def net(self):
+        self.progress.setValue(self.randperc())
+        time.sleep(0.02)
+        self.progress.setValue(100)
+        self.place.setText(network())
+        self.now = self.net
+        self.status.setText('Настройки подключения')
 
     @staticmethod
     def randperc():
@@ -89,7 +98,7 @@ class Main(QMainWindow, Ui_MainWindow):
         self.progress.setValue(100)
         self.place.setText(time_on())
         self.now = self.timeon
-        self.status.setText('Время включения')
+        self.status.setText('Время последней перезагрузки')
 
     def general(self):
         self.progress.setValue(self.randperc())

@@ -1,4 +1,6 @@
+import os
 import platform
+import subprocess
 import time
 from datetime import datetime
 from pprint import pprint
@@ -73,6 +75,12 @@ def disk():
     return result
 
 
+def network():
+    os.system('ipconfig /all > network.txt')
+    with open('network.txt', 'r', encoding='cp866') as file:
+        return file.read()
+
+
 def op():
     result = {}
     n = psutil.virtual_memory()
@@ -84,7 +92,4 @@ def op():
 
 
 if __name__ == '__main__':
-    pprint()
     print("--- %s seconds ---" % round(time.time() - start_time, 5))
-
-# pip freeze > requirements.txt

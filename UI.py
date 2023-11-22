@@ -73,7 +73,7 @@ class Ui_MainWindow(object):
         MainWindow.setWindowTitle(_translate("MainWindow", "Системный помощник"))
         self.btn.setText(_translate("MainWindow", "Обновить"))
         self.menu.setTitle(_translate("MainWindow", "Разделы"))
-        self.action.setText(_translate("MainWindow", "Время включения"))
+        self.action.setText(_translate("MainWindow", "Время последней перезагрузки"))
         self.action2.setText(_translate("MainWindow", "Процессор"))
         self.action3.setText(_translate("MainWindow", "Оперативная память"))
         self.action4.setText(_translate("MainWindow", "Диски"))
