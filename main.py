@@ -64,10 +64,10 @@ def disk():
     for i in psutil.disk_partitions():
         now = {}
         n = psutil.disk_usage(i.device)
-        now['total'] = translate(n.total)
-        now['used'] = translate(n.used)
-        now['free'] = translate(n.free)
-        now['procent'] = n.percent, '%'
+        now['Всего'] = translate(n.total)
+        now['Использовано'] = translate(n.used)
+        now['Свободно'] = translate(n.free)
+        now['Занято'] = str(n.percent) + '%'
         result[i.device] = now
     return result
 
@@ -75,15 +75,15 @@ def disk():
 def op():
     result = {}
     n = psutil.virtual_memory()
-    result['vsego'] = translate(n.total)
-    result['dostupnaya'] = translate(n.available)
-    result['procent zanyato'] = str(n.percent) + '%'
-    result['ispolzuetsya'] = translate(n.used)
+    result['Всего'] = translate(n.total)
+    result['Допустимая'] = translate(n.available)
+    result['Процентов занято'] = str(n.percent) + '%'
+    result['Используется'] = translate(n.used)
     return result
 
 
 if __name__ == '__main__':
-    pprint(process_inf())
+    pprint(disk())
     print("--- %s seconds ---" % round(time.time() - start_time, 5))
 
-# pip install -r requirements.txt
+# pip freeze > requirements.txt
