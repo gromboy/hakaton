@@ -2,8 +2,9 @@ import platform
 import time
 from datetime import datetime
 from pprint import pprint
-import psutil
+
 import cpuinfo
+import psutil
 import wmi
 
 start_time = time.time()
@@ -83,7 +84,7 @@ def op():
 
 
 if __name__ == '__main__':
-    pprint(disk())
+    pprint()
     print("--- %s seconds ---" % round(time.time() - start_time, 5))
 
 # pip freeze > requirements.txt

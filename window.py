@@ -1,8 +1,6 @@
 import sys
 from random import randint
-
-from PyQt5 import uic
-from PyQt5.QtWidgets import QMainWindow, QApplication, QLabel
+from PyQt5.QtWidgets import QMainWindow, QApplication, QLabel, QMessageBox
 from UI import Ui_MainWindow
 from PyQt5.QtGui import QIcon
 from main import *
@@ -29,6 +27,14 @@ class Main(QMainWindow, Ui_MainWindow):
     @staticmethod
     def randperc():
         return randint(10, 40)
+
+    def closeEvent(self, event):
+        a = QMessageBox.question(self, 'Закрыть помощник', 'Вы уверены что хотите закрыть программу?', QMessageBox.Yes,
+                                 QMessageBox.No)
+        if a == QMessageBox.Yes:
+            event.accept()
+        else:
+            event.ignore()
 
     def disks(self):
         self.progress.setValue(self.randperc())

@@ -70,7 +70,7 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "Системное администрирование"))
+        MainWindow.setWindowTitle(_translate("MainWindow", "Системный помощник"))
         self.btn.setText(_translate("MainWindow", "Обновить"))
         self.menu.setTitle(_translate("MainWindow", "Разделы"))
         self.action.setText(_translate("MainWindow", "Время включения"))
